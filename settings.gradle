@@ -7,4 +7,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "MecanumLib"
-include ':app'
+include ':MecanumLib'

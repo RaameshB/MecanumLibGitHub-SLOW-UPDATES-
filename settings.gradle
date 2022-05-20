@@ -8,3 +8,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "MecanumLib"
 include ':MecanumLib'
+include ':Examples'
+include 'Samples'
+

@@ -1,31 +1,27 @@
-plugins {
-    id 'com.android.application'
-}
+import java.text.SimpleDateFormat
+
+//
+// build.gradle in MecanumLib
+//
+apply plugin: 'com.android.library'
 
 android {
-    compileSdk 32
 
     defaultConfig {
-        applicationId "com.raameshb.mecanumlib"
-        minSdk 21
-        targetSdk 32
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        minSdkVersion 31
+        //noinspection ExpiredTargetSdkVersion
+        targetSdkVersion 31
+        buildConfigField "String", "APP_BUILD_TIME", '"' + (new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ", Locale.ROOT).format(new Date())) + '"'
     }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
+    compileSdkVersion 31
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
+
 
 dependencies {
 
@@ -34,4 +30,10 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation 'org.firstinspires.ftc:RobotCore:7.1.0'
+    implementation 'org.firstinspires.ftc:Hardware:7.1.0'
+    implementation 'org.firstinspires.ftc:FtcCommon:7.1.0'
+
+    implementation group: 'org.ejml', name: 'ejml-all', version: '0.41'
 }

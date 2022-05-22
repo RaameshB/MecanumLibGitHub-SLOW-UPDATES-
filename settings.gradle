@@ -6,8 +6,6 @@ dependencyResolutionManagement {
         jcenter() // Warning: this repository is going to shut down soon
     }
 }
-rootProject.name = "MecanumLib"
-include ':MecanumLib'
-include ':Examples'
-include 'Samples'
-
+rootProject.name = "MecanumLib3"
+include ':app'
+include ':mecanumlib'

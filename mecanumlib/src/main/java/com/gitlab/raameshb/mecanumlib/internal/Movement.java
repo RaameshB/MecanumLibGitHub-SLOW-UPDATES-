@@ -1,9 +1,10 @@
-package com.raameshb.mecanumlib.internal;
+package com.gitlab.raameshb.mecanumlib.internal;
 
 import org.ejml.simple.SimpleMatrix;
 
 import java.util.HashMap;
 import java.util.Objects;
+
 
 public class Movement {
 
@@ -95,6 +96,7 @@ public class Movement {
                 MecanumChassis.frontRight.setPower(frontRightPowerFinal);
                 MecanumChassis.backLeft.setPower(backLeftPowerFinal);
                 MecanumChassis.backRight.setPower(backRightPowerFinal);
+                Thread.yield();
             }
         }
     }

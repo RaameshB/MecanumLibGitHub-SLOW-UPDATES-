@@ -1,4 +1,4 @@
-package com.raameshb.mecanumlib.internal;
+package com.gitlab.raameshb.mecanumlib.internal;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -10,12 +10,15 @@ public class MecanumChassis {
 
     public static boolean isInitialized = false;
     public static DcMotorEx frontRight, frontLeft, backRight, backLeft;
-    public static DcMotor xEncoder1, xEncoder2, yEncoder;
+//    public static DcMotor xEncoder1, xEncoder2, yEncoder;
 
     public static LinearOpMode linearOpMode;
-    static boolean usingSeparateEncoders = false;
+    // static boolean usingSeparateEncoders = false;
+
+    public static HardwareMap hardwareMap;
 
     public static void MecanumChassisConfig(String frontRightName, String frontLeftName, String backRightName, String backLeftName, HardwareMap hardwareMap, LinearOpMode linearOpMode) {
+        MecanumChassis.hardwareMap = hardwareMap;
         frontRight = (DcMotorEx) hardwareMap.dcMotor.get(frontRightName);
         frontLeft = (DcMotorEx) hardwareMap.dcMotor.get(frontLeftName);
         backRight = (DcMotorEx) hardwareMap.dcMotor.get(backRightName);
@@ -23,32 +26,32 @@ public class MecanumChassis {
 
         defaultMotors();
 
-        linearOpMode = linearOpMode;
+        MecanumChassis.linearOpMode = linearOpMode;
 
         isInitialized = true;
 
     }
 
-    public static void MecanumChassisConfig(String frontRightName, String frontLeftName, String backRightName, String backLeftName, String xEncoder1Name, String xEncoder2Name, String yEncoderName, HardwareMap hardwareMap, LinearOpMode linearOpMode) {
-        frontRight = (DcMotorEx) hardwareMap.dcMotor.get(frontRightName);
-        frontLeft = (DcMotorEx) hardwareMap.dcMotor.get(frontLeftName);
-        backRight = (DcMotorEx) hardwareMap.dcMotor.get(backRightName);
-        backLeft = (DcMotorEx) hardwareMap.dcMotor.get(backLeftName);
-
-        xEncoder1 = hardwareMap.dcMotor.get(xEncoder1Name);
-        xEncoder2 = hardwareMap.dcMotor.get(xEncoder2Name);
-        yEncoder = hardwareMap.dcMotor.get(yEncoderName);
-
-        usingSeparateEncoders = true;
-
-        defaultMotors();
-
-        linearOpMode = linearOpMode;
-
-        isInitialized = true;
-
-
-    }
+//    public static void MecanumChassisConfig(String frontRightName, String frontLeftName, String backRightName, String backLeftName, String xEncoder1Name, String xEncoder2Name, String yEncoderName, HardwareMap hardwareMap, LinearOpMode linearOpMode) {
+//        frontRight = (DcMotorEx) hardwareMap.dcMotor.get(frontRightName);
+//        frontLeft = (DcMotorEx) hardwareMap.dcMotor.get(frontLeftName);
+//        backRight = (DcMotorEx) hardwareMap.dcMotor.get(backRightName);
+//        backLeft = (DcMotorEx) hardwareMap.dcMotor.get(backLeftName);
+//
+//        xEncoder1 = hardwareMap.dcMotor.get(xEncoder1Name);
+//        xEncoder2 = hardwareMap.dcMotor.get(xEncoder2Name);
+//        yEncoder = hardwareMap.dcMotor.get(yEncoderName);
+//
+//        usingSeparateEncoders = true;
+//
+//        defaultMotors();
+//
+//        linearOpMode = linearOpMode;
+//
+//        isInitialized = true;
+//
+//
+//    }
     public static void defaultMotors() {
         frontLeft.setDirection(DcMotorSimple.Direction.FORWARD);
         backLeft.setDirection(DcMotorSimple.Direction.FORWARD);

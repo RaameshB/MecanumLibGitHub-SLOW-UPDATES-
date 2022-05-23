@@ -1,10 +1,10 @@
-package com.raameshb.mecanumlib.external.samples;
+package com.gitlab.raameshb.mecanumlib.external.samples;
 
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import com.raameshb.mecanumlib.internal.MecanumChassis;
-import com.raameshb.mecanumlib.internal.Movement;
+import com.gitlab.raameshb.mecanumlib.internal.MecanumChassis;
+import com.gitlab.raameshb.mecanumlib.internal.Movement;
 
 @Disabled //comment out this line to have the teleop show up
 

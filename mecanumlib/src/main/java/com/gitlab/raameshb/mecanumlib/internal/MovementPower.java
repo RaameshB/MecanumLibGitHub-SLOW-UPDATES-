@@ -1,4 +1,4 @@
-package com.raameshb.mecanumlib.internal;
+package com.gitlab.raameshb.mecanumlib.internal;
 
 import org.ejml.simple.SimpleMatrix;
 

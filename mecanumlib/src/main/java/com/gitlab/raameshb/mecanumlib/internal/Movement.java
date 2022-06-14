@@ -9,8 +9,8 @@ import java.util.Objects;
 public class Movement {
 
     public Movement() {
-        if (!MecanumChassis.isInitialized) {
-            throw new RuntimeException("MecanumChassis is not initialized");
+        if (!(MecanumChassis.isInitialized && MecanumChassis.areMotorsInitialized)) {
+            throw new RuntimeException("MecanumChassis is not properly initialized, check if you've run MecanumChassis.MecanumChassisInit() and MecanumChassis.configMotors()");
         }
         initHashmap();
         Thread movementThread = new Thread(new powerSetter());
@@ -53,6 +53,7 @@ public class Movement {
     static HashMap<format, double[]> movementMap = new HashMap<>();
 
     public static void initHashmap() {
+        //0 is forward, 1 is strafe, 2 is rotate
         movementMap.put(format.FORWARD_STRAFE_ROATATE, new double[]{0, 1, 2});
         movementMap.put(format.STRAFE_FORWARD_ROTATE, new double[]{1, 0, 2});
         movementMap.put(format.FORWARD_ROTATE_STRAFE, new double[]{0, 2, 1});

@@ -15,7 +15,8 @@ public class ExampleMecanumTeleop extends LinearOpMode {
     @Override
     public void runOpMode() throws InterruptedException {
 
-        MecanumChassis.MecanumChassisConfig("front_right", "front_left", "back_right", "back_left", hardwareMap, this);
+        MecanumChassis.MecanumChassisInit(hardwareMap, this);
+        MecanumChassis.configMotors("front_right", "front_left", "back_right", "back_left");
         movementController = new Movement();
 
         waitForStart();

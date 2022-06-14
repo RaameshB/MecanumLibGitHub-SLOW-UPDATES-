@@ -83,10 +83,10 @@ public class Movement {
 
     public void move(double rightY, double leftY, double rightX, double leftX) {
         double side = (rightX + leftX)/2;
-        backLeftPowerFinal = rightY + side;
+        backLeftPowerFinal = leftY + side;
         frontRightPowerFinal = rightY + side;
         frontLeftPowerFinal = leftY + -side;
-        backRightPowerFinal = leftY + -side;
+        backRightPowerFinal = rightY + -side;
     }
 
     static class powerSetter implements Runnable {

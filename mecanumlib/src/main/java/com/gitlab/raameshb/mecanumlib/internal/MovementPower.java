@@ -22,7 +22,7 @@ public class MovementPower {
     When strafing the frontLeft and backRight wheels are given negative power and the frontRight and backLeft wheels
     are given negative power
      */
-    static final double[][] strafeValues = {{-1, 1, 1, -1}};
+    static final double[][] strafeValues = {{1, -1, -1, 1}};
     static final SimpleMatrix rotationMatrix = new SimpleMatrix(rotationValues);
     static final SimpleMatrix forwardMatrix = new SimpleMatrix(forwardValues);
     static final SimpleMatrix strafeMatrix = new SimpleMatrix(strafeValues);

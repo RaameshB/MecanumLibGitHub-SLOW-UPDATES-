@@ -17,7 +17,7 @@ public class RoadRunnerPositionTracking extends ThreeTrackingWheelLocalizer {
     //TODO: Change x1 and x2 to y1 and y2 and then change y to x
 
     static double TICKS_PER_REV = 8192;
-    static double WHEEL_RADIUS = 1.37795/2;
+    static double WHEEL_RADIUS = 2.5/2;
     static double GEAR_RATIO = 1;
 
     static double LATERAL_DISTANCE = 10;

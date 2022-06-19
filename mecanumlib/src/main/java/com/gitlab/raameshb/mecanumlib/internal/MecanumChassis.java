@@ -50,6 +50,14 @@ public class MecanumChassis {
         areEncodersInitialized = true;
     }
 
+
+    public static void setMotorDirections(DcMotorSimple.Direction frontRightDir, DcMotorSimple.Direction frontLeftDir, DcMotorSimple.Direction backRightDir, DcMotorSimple.Direction backLeftDir) {
+        frontRight.setDirection(frontRightDir);
+        frontLeft.setDirection(frontLeftDir);
+        backRight.setDirection(backRightDir);
+        backLeft.setDirection(backLeftDir);
+    }
+
 //    public static void MecanumChassisConfig(String frontRightName, String frontLeftName, String backRightName, String backLeftName, String xEncoder1Name, String xEncoder2Name, String yEncoderName, HardwareMap hardwareMap, LinearOpMode linearOpMode) {
 //        frontRight = (DcMotorEx) hardwareMap.dcMotor.get(frontRightName);
 //        frontLeft = (DcMotorEx) hardwareMap.dcMotor.get(frontLeftName);
